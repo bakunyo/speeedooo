@@ -1,0 +1,21 @@
+<p id="notice"></p>
+
+<table class="table table-bordered">
+<tr>
+	<th style="background-color: #DFF0D8" width="15%">タイトル</th>
+	<td><%= @task.title %></td>
+</tr>
+<tr>
+	<th style="background-color: #DFF0D8">内容</th>
+	<td><pre><%= @task.content %></pre></td>
+</tr>
+<tr>
+	<th style="background-color: #DFF0D8">期限</th>
+	<td><%= @task.limit %></td>
+</tr>
+</table>
+
+<%= link_to 'タスクを編集', edit_task_path(@task) %> |
+<%= link_to 'トップにもどる', '/' %>
+
+

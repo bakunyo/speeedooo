@@ -1,0 +1,29 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h4><%= f.label 'タイトル' %></h4>
+    <%= f.text_field :title, :placeholder => "タスクの名前を記入"%>
+  </div>
+  <div class="field">
+    <h4><%= f.label '内容' %></h4>
+    <%= f.text_area :content, :rows => 10, :placeholder => "タスクの内容を記入" %>
+  </div>
+  <div class="field">
+    <h4><%= f.label '期限' %></h4>
+    <%= f.date_select :limit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h2>タスク一覧</h2>
+
+<table class="table table-hover table-bordered">
+  <tr style="background-color: #DFF0D8">
+    <th>タイトル</th>
+    <th>期限</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= link_to task.title, task %></td>
+    <td><%= task.limit %></td>
+    <td><%= link_to '編集', edit_task_path(task) %></td>
+    <td><%= link_to '削除', task, method: :delete, data: { confirm: '削除しますか?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'タスクを追加', new_task_path %>
