@@ -1,2 +1,2 @@
 my first github repositor
-my name is hiroyukiy
+my name is hiroyuki
